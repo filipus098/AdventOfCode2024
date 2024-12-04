@@ -9,7 +9,7 @@ public class Day1 {
   public static void main(String[] args) {
 
     try {
-      List<String> input =  Files.readAllLines(Paths.get("src/resources/day1.txt"));
+      List<String> input = Files.readAllLines(Paths.get("src/resources/day1.txt"));
 
       List<String> part1List = new ArrayList<>(input);
       List<String> part2List = new ArrayList<>(input);
@@ -46,8 +46,8 @@ public class Day1 {
   }
 
   public static void part2(List<String> inputList) {
-    Map<Integer,Integer> left = new HashMap<>();
-    Map<Integer,Integer> right = new HashMap<>();
+    Map<Integer, Integer> left = new HashMap<>();
+    Map<Integer, Integer> right = new HashMap<>();
 
     for (String line : inputList) {
       String[] parts = line.split("\\s+");
@@ -56,14 +56,12 @@ public class Day1 {
     }
 
     int sum = 0;
-    for (Map.Entry<Integer,Integer> entryLeft : left.entrySet()) {
+    for (Map.Entry<Integer, Integer> entryLeft : left.entrySet()) {
       Integer valueRight = right.get(entryLeft.getKey());
       if (valueRight != null) {
-        sum += valueRight*entryLeft.getValue()*entryLeft.getKey();
+        sum += valueRight * entryLeft.getValue() * entryLeft.getKey();
       }
     }
     System.out.println("Part 2 result: " + sum);
   }
-
-
 }
