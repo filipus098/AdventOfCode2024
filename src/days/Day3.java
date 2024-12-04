@@ -70,7 +70,6 @@ public class Day3 {
               continue;
             }
 
-
             long firstNum = Long.parseLong(toProcess[0]);
             long secondNum = Long.parseLong(toProcess[1].split("\\)")[0]);
 
